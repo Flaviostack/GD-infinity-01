@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dohkq831imuwu"]
+
+[ext_resource type="Texture2D" uid="uid://2r0d72py6dfr" path="res://Textures/NaveVermelha.png" id="1_jde5u"]
+[ext_resource type="Script" uid="uid://cx1askr8d8sxq" path="res://scenes/obstacle.gd" id="1_qf6v3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qf6v3"]
+size = Vector2(16, 10.5)
+
+[node name="Obstacle" type="CharacterBody2D" groups=["Enimie"]]
+script = ExtResource("1_qf6v3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_jde5u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.25)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_qf6v3")
+
+[node name="coordenada" type="RichTextLabel" parent="."]
+modulate = Color(1, 0.156863, 1, 1)
+offset_left = -26.0
+offset_top = -32.0
+offset_right = 14.0
+offset_bottom = -9.0
+text = "Y = 0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0

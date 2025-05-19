@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfcymhqi8q682"]
+
+[ext_resource type="Texture2D" uid="uid://yb2w5fdm5jte" path="res://Textures/naveVerde.png" id="1_p0vlq"]
+[ext_resource type="Script" uid="uid://dbmyrgwd323x5" path="res://scenes/player.gd" id="1_v6fml"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0vlq"]
+size = Vector2(16, 10)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_v6fml")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_p0vlq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_p0vlq")
+
+[node name="Vida" type="RichTextLabel" parent="."]
+modulate = Color(6.16074e-06, 0.712449, 0.713213, 1)
+offset_left = -52.0
+offset_top = -40.0
+offset_right = 47.0
+text = "Tu se lascou!"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1

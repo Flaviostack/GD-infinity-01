@@ -1,0 +1,35 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Ao infinito e além"
+run/main_scene="uid://bkbh32lqsidlo"
+config/features=PackedStringArray("4.4", "Mobile")
+config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=720
+window/size/viewport_height=720
+
+[dotnet]
+
+project/assembly_name="Ao infinito e além"
+
+[global_group]
+
+Enimie=""
+
+[rendering]
+
+renderer/rendering_method="mobile"
+textures/size/viewport_height=648
+textures/size/viewport_width=1152
