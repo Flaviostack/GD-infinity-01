@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7f8pypu0cyug"]
+
+[ext_resource type="Script" uid="uid://c8wov8inexu7v" path="res://scenes/menu.gd" id="1_con2f"]
+[ext_resource type="Texture2D" uid="uid://cmup5q4k16qvc" path="res://Textures/fundo.png" id="1_yqeox"]
+[ext_resource type="PackedScene" uid="uid://bkbh32lqsidlo" path="res://scenes/main.tscn" id="2_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://di2cew1to0aas" path="res://Textures/botao.png" id="2_vjb58"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vjb58"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_con2f")
+cena_inicial = ExtResource("2_mhnvy")
+
+[node name="Fundo" type="Sprite2D" parent="."]
+position = Vector2(361, 360)
+texture = ExtResource("1_yqeox")
+metadata/_edit_lock_ = true
+
+[node name="Start" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 219.0
+offset_top = 250.0
+offset_right = 305.0
+offset_bottom = 281.0
+scale = Vector2(3, 3)
+theme_override_styles/focus = SubResource("StyleBoxTexture_vjb58")
+text = "COMEÇAR"
+flat = true
+autowrap_mode = 3
+icon_alignment = 1
+expand_icon = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Start"]
+show_behind_parent = true
+position = Vector2(44, 16.3333)
+scale = Vector2(2.72, 2.13649)
+texture = ExtResource("2_vjb58")
+
+[node name="game_over_text" type="RichTextLabel" parent="."]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_left = 116.0
+offset_top = 59.0
+offset_right = 316.0
+offset_bottom = 151.0
+scale = Vector2(2.4, 2.4)
+text = "TU SE LASCOU!"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

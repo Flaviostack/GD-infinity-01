@@ -1,6 +1,6 @@
 extends Node2D
 @export var obstacle_scene : PackedScene
-@export var spawn_area_width = 600
+@export var spawn_area_width = 580
 
 func eliminar_objetos(obstacle):
 		if obstacle.position.y >= 600:
