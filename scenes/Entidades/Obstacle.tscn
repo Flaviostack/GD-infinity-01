@@ -1,24 +1,25 @@
 [gd_scene load_steps=4 format=3 uid="uid://dohkq831imuwu"]
 
-[ext_resource type="Texture2D" uid="uid://2r0d72py6dfr" path="res://Textures/NaveVermelha.png" id="1_jde5u"]
-[ext_resource type="Script" uid="uid://cx1askr8d8sxq" path="res://scenes/obstacle.gd" id="1_qf6v3"]
+[ext_resource type="Script" uid="uid://cx1askr8d8sxq" path="res://scenes/Entidades/obstacle.gd" id="1_51r8p"]
+[ext_resource type="Texture2D" uid="uid://bsga1promyyr6" path="res://Textures/Entidades/pedra.png" id="2_q1byk"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qf6v3"]
-size = Vector2(16, 10.5)
+[sub_resource type="CircleShape2D" id="CircleShape2D_lf1j4"]
+radius = 8.50827
 
 [node name="Obstacle" type="CharacterBody2D" groups=["Enemie"]]
-script = ExtResource("1_qf6v3")
+script = ExtResource("1_51r8p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
-texture = ExtResource("1_jde5u")
+texture = ExtResource("2_q1byk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.25)
+position = Vector2(-1, -1)
 scale = Vector2(2, 2)
-shape = SubResource("RectangleShape2D_qf6v3")
+shape = SubResource("CircleShape2D_lf1j4")
 
 [node name="coordenada" type="RichTextLabel" parent="."]
+visible = false
 modulate = Color(1, 0.156863, 1, 1)
 offset_left = -26.0
 offset_top = -32.0

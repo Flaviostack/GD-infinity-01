@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkbh32lqsidlo"]
+
+[ext_resource type="Script" uid="uid://cp86an1njpgi8" path="res://scenes/outros/main.gd" id="1_j314w"]
+[ext_resource type="PackedScene" uid="uid://bfcymhqi8q682" path="res://scenes/Entidades/Player.tscn" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://b06fd3x0gq5t1" path="res://Textures/ambiente/fundo_01.png" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://c57n4tk7rsp3o" path="res://scenes/Entidades/obstacle_spawner.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://cpr0lei6fkkit" path="res://scenes/outros/hud.tscn" id="4_f62gx"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_j314w")
+
+[node name="Fundo" type="Sprite2D" parent="."]
+position = Vector2(363, 363)
+texture = ExtResource("1_sugp2")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(363, 363)
+metadata/_edit_lock_ = true
+
+[node name="HUD" parent="." instance=ExtResource("4_f62gx")]
+
+[node name="Player" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(363, 570)
+scale = Vector2(1.5, 1.5)
+
+[node name="ObstacleSpawner" parent="." instance=ExtResource("3_sugp2")]
+position = Vector2(363, 363)

@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpr0lei6fkkit"]
+
+[ext_resource type="Script" uid="uid://dyo6raagbqk47" path="res://scenes/outros/hud.gd" id="1_2q3sw"]
+[ext_resource type="Script" uid="uid://bvlfawcpb5tcp" path="res://scenes/outros/score.gd" id="1_8m8st"]
+
+[sub_resource type="Theme" id="Theme_2q3sw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2q3sw"]
+bg_color = Color(0.141176, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glont"]
+bg_color = Color(0.971999, 0.000629935, 0.946413, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 10
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_2q3sw")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Score" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 14.0
+offset_right = 83.0
+offset_bottom = 23.0
+text = "SCORE: 0"
+script = ExtResource("1_8m8st")
+
+[node name="LifeSlider" type="ProgressBar" parent="Control"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 651.0
+offset_right = 174.0
+offset_bottom = 678.0
+theme = SubResource("Theme_2q3sw")
+theme_override_styles/background = SubResource("StyleBoxFlat_2q3sw")
+theme_override_styles/fill = SubResource("StyleBoxFlat_glont")
+value = 100.0
