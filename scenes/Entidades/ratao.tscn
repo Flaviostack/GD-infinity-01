@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cahst5sg2lslv"]
+
+[ext_resource type="Texture2D" uid="uid://2r0d72py6dfr" path="res://Textures/NaveVermelha.png" id="1_h2gvg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2gvg"]
+
+[node name="Ratao" type="Area2D" groups=["Enemie"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_h2gvg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_h2gvg")

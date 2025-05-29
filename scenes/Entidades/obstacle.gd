@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed_base = 15
 var speed = speed_base * 10
-@export var type = "Enemie"
+@export var type = "Rocha"
 
 signal defeated
 

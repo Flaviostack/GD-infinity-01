@@ -1,7 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://brp2wgaby503e"]
+[gd_scene load_steps=15 format=3 uid="uid://brp2wgaby503e"]
 
 [ext_resource type="Script" uid="uid://d07k85omcaxax" path="res://scenes/Entidades/bala.gd" id="1_uu6iy"]
 [ext_resource type="Texture2D" uid="uid://bk4flehlius6q" path="res://Textures/Entidades/bala.png" id="3_8mjn7"]
+[ext_resource type="AudioStream" uid="uid://c32d0jm0cytxi" path="res://sons/atirar.wav" id="3_n7l1s"]
+[ext_resource type="AudioStream" uid="uid://c5cod8dnjgldo" path="res://sons/explosion.wav" id="4_h81is"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uu6iy"]
 size = Vector2(2, 8)
@@ -80,6 +82,12 @@ shape = SubResource("RectangleShape2D_uu6iy")
 [node name="animacao" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_uu6iy")
 frame_progress = 0.0153233
+
+[node name="pewpew" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_n7l1s")
+
+[node name="explodir" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_h81is")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

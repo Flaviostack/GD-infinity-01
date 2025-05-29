@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvvxfpegdocq"]
+
+[ext_resource type="Texture2D" uid="uid://cmup5q4k16qvc" path="res://Textures/fundo.png" id="1_00ajq"]
+[ext_resource type="PackedScene" uid="uid://cahst5sg2lslv" path="res://scenes/Entidades/ratao.tscn" id="2_h3lqg"]
+[ext_resource type="PackedScene" uid="uid://bfcymhqi8q682" path="res://scenes/Entidades/Player.tscn" id="3_h3lqg"]
+
+[node name="BossFight" type="Node2D"]
+
+[node name="Fundo" type="Sprite2D" parent="."]
+position = Vector2(360, 360)
+texture = ExtResource("1_00ajq")
+metadata/_edit_lock_ = true
+
+[node name="Ratao" parent="." instance=ExtResource("2_h3lqg")]
+position = Vector2(364, 55)
+scale = Vector2(10, 10)
+
+[node name="Player" parent="." instance=ExtResource("3_h3lqg")]
+position = Vector2(363, 570)

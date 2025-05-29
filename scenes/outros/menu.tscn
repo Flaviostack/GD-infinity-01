@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c7f8pypu0cyug"]
+[gd_scene load_steps=9 format=3 uid="uid://c7f8pypu0cyug"]
 
 [ext_resource type="Script" uid="uid://c8wov8inexu7v" path="res://scenes/outros/menu.gd" id="1_con2f"]
 [ext_resource type="PackedScene" uid="uid://bkbh32lqsidlo" path="res://scenes/outros/main.tscn" id="2_mhnvy"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ck33f8dfqpvrg" path="res://Textures/HUD/play.png" id="4_dntoe"]
 [ext_resource type="FontFile" uid="uid://c0js8a3m8a6pb" path="res://Textures/VCR_OSD_MONO_1.001.ttf" id="4_drenf"]
 [ext_resource type="Texture2D" uid="uid://bmqqnp3t8cfmv" path="res://Textures/HUD/sair.png" id="5_drenf"]
+[ext_resource type="AudioStream" uid="uid://cvs5s0ss32uka" path="res://sons/blipSelect.wav" id="7_1arhv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vjb58"]
 
@@ -84,6 +85,9 @@ scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_1arhv")
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

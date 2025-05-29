@@ -14,6 +14,7 @@ signal vida_change(new_vida)
 func levar_dano(dano : int):
 	vida = vida - dano
 	emit_signal("vida_change", vida)
+	$aiaiai.play()
 
 func mostra_vida():
 	var mostra_vida = $Vida

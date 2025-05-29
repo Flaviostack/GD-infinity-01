@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://bfcymhqi8q682"]
+[gd_scene load_steps=21 format=3 uid="uid://bfcymhqi8q682"]
 
 [ext_resource type="Script" uid="uid://dbmyrgwd323x5" path="res://scenes/Entidades/player.gd" id="1_v6fml"]
 [ext_resource type="PackedScene" uid="uid://brp2wgaby503e" path="res://scenes/Entidades/bala.tscn" id="2_mdl7e"]
 [ext_resource type="Texture2D" uid="uid://dqvneo76g0nf1" path="res://Textures/Entidades/GatinhoEspacial.png" id="3_mdl7e"]
 [ext_resource type="Texture2D" uid="uid://b57y2nrgeppco" path="res://Textures/HUD/mira.png" id="4_l1b1r"]
+[ext_resource type="AudioStream" uid="uid://b2aipv45xyg8b" path="res://sons/hitHurt.wav" id="5_l40qw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0vlq"]
 size = Vector2(11.5, 9)
@@ -148,3 +149,6 @@ position = Vector2(0, -20)
 position = Vector2(0, -20)
 sprite_frames = SubResource("SpriteFrames_iv861")
 frame_progress = 0.944454
+
+[node name="aiaiai" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_l40qw")

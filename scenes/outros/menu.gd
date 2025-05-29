@@ -12,8 +12,11 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_start_pressed() -> void:
+	$click.play()
+	await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_packed(cena_inicial)
 
 
 func _on_exit_pressed() -> void:
+	$click.play()
 	get_tree().quit()#sai do jogo mano
