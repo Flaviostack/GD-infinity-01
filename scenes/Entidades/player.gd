@@ -1,6 +1,7 @@
 extends CharacterBody2D
 #onready vars
 @onready var animacao = $animacao
+@onready var animacao_mira = $Mira/animacao
 
 const velocidade = 300.0
 var SPEED = velocidade
@@ -33,6 +34,7 @@ func atirar():
 	
 func controlar():
 	animacao.play("parado")
+	animacao_mira.play("default")
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
@@ -61,8 +63,8 @@ func verificar_colisao():
 		var colisor = colisao.get_collider()
 		 
 		if colisor.is_in_group("Enemie"):
-			colisor.queue_free()
-			levar_dano(25)
+			colisor.call_deferred("queue_free")
+			levar_dano(15)
 			animacao.play("machucado")
 
 func _physics_process(delta: float) -> void:

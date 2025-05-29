@@ -10,6 +10,7 @@
 script = ExtResource("1_j314w")
 
 [node name="Fundo" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0, 0.635294, 1)
 position = Vector2(363, 363)
 texture = ExtResource("1_sugp2")
 metadata/_edit_lock_ = true

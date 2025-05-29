@@ -24,3 +24,8 @@ func _on_body_entered(body: Node2D) -> void:
 		body.queue_free()
 		queue_free()
 	
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Enemie"):
+		queue_free()

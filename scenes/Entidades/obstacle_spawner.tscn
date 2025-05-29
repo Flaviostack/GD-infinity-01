@@ -1,14 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://c57n4tk7rsp3o"]
+[gd_scene load_steps=4 format=3 uid="uid://c57n4tk7rsp3o"]
 
 [ext_resource type="Script" uid="uid://cn3qb36rl48jh" path="res://scenes/Entidades/obstacle_spawner.gd" id="1_vyba0"]
 [ext_resource type="PackedScene" uid="uid://dohkq831imuwu" path="res://scenes/Entidades/Obstacle.tscn" id="2_ra2ui"]
+[ext_resource type="PackedScene" uid="uid://5ps6qiwuvdw8" path="res://scenes/Entidades/energy_ball.tscn" id="3_0bspu"]
 
 [node name="ObstacleSpawner" type="Node2D"]
 script = ExtResource("1_vyba0")
 obstacle_scene = ExtResource("2_ra2ui")
+Enemy_01_scene = ExtResource("3_0bspu")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.952
+[node name="EnergyTimer" type="Timer" parent="."]
+wait_time = 5.0
 autostart = true
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="EnergyTimer" to="." method="_on_energy_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
