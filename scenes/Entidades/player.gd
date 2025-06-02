@@ -3,8 +3,8 @@ extends CharacterBody2D
 @onready var animacao = $animacao
 @onready var animacao_mira = $Mira/animacao
 
-const velocidade = 300.0
-var SPEED = velocidade
+@export var velocidade_base = 30
+var SPEED = velocidade_base*10
 
 signal vida_change(new_vida)
 @export var vida = 100

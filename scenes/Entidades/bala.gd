@@ -4,6 +4,9 @@ var speed = speed_base * 10
 @export var direction = Vector2.UP
 @onready var animacao = $animacao
 
+var dano_base = 5
+var dano = dano_base
+
 func eliminar_objeto():
 		if position.y <= 0:
 			queue_free()
@@ -25,8 +28,9 @@ func _on_body_entered(body: Node2D) -> void:
 		$explodir.play()
 		await get_tree().create_timer(0.3).timeout
 		queue_free()
-
-
+	
 func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Boss"):
+		area.levar_dano(dano)
 	if area.is_in_group("Enemie"):
 		queue_free()

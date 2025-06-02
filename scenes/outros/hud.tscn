@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://cpr0lei6fkkit"]
+[gd_scene load_steps=15 format=3 uid="uid://cpr0lei6fkkit"]
 
 [ext_resource type="Script" uid="uid://dyo6raagbqk47" path="res://scenes/outros/hud.gd" id="1_2q3sw"]
 [ext_resource type="Script" uid="uid://bvlfawcpb5tcp" path="res://scenes/outros/score.gd" id="1_8m8st"]
 [ext_resource type="FontFile" uid="uid://c0js8a3m8a6pb" path="res://Textures/VCR_OSD_MONO_1.001.ttf" id="2_6dkgg"]
 [ext_resource type="Texture2D" uid="uid://dlogktpkkloe1" path="res://Textures/HUD/vidaDoGatinho.png" id="3_glont"]
+[ext_resource type="Texture2D" uid="uid://bmqqnp3t8cfmv" path="res://Textures/HUD/sair.png" id="5_etnoo"]
 
 [sub_resource type="Theme" id="Theme_2q3sw"]
 
@@ -58,6 +59,8 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ww4j7"]
+
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_2q3sw")
 
@@ -97,3 +100,27 @@ position = Vector2(-20, 12)
 scale = Vector2(2.27291, 2.27291)
 sprite_frames = SubResource("SpriteFrames_bx5m1")
 frame_progress = 0.0461717
+
+[node name="Exit" type="Button" parent="Control"]
+texture_filter = 1
+offset_left = 646.0
+offset_top = -15.0
+offset_right = 732.0
+offset_bottom = 16.0
+scale = Vector2(3, 3)
+theme_override_colors/font_outline_color = Color(0.129412, 0.109804, 0.517647, 1)
+theme_override_colors/font_color = Color(0.478431, 0.45098, 0.819608, 1)
+theme_override_fonts/font = ExtResource("2_6dkgg")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ww4j7")
+text = "
+"
+flat = true
+autowrap_mode = 3
+icon_alignment = 1
+expand_icon = true
+
+[node name="exit_texture" type="Sprite2D" parent="Control/Exit"]
+position = Vector2(15, 16.3333)
+texture = ExtResource("5_etnoo")
+
+[connection signal="pressed" from="Control/Exit" to="." method="_on_exit_pressed"]

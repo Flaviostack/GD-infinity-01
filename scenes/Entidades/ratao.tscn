@@ -1,13 +1,72 @@
-[gd_scene load_steps=3 format=3 uid="uid://cahst5sg2lslv"]
+[gd_scene load_steps=12 format=3 uid="uid://cahst5sg2lslv"]
 
-[ext_resource type="Texture2D" uid="uid://2r0d72py6dfr" path="res://Textures/NaveVermelha.png" id="1_h2gvg"]
+[ext_resource type="Script" uid="uid://coox1ilxhiixy" path="res://scenes/Entidades/ratao.gd" id="1_58qke"]
+[ext_resource type="PackedScene" uid="uid://bpxah6pmofa33" path="res://scenes/Entidades/ratao_projetil.tscn" id="2_65hd2"]
+[ext_resource type="Texture2D" uid="uid://kekta4m8j3pg" path="res://Textures/Entidades/boss/ratao_0.png" id="3_pcvdn"]
+[ext_resource type="Texture2D" uid="uid://bmqqnp3t8cfmv" path="res://Textures/HUD/sair.png" id="4_65hd2"]
+[ext_resource type="FontFile" uid="uid://c0js8a3m8a6pb" path="res://Textures/VCR_OSD_MONO_1.001.ttf" id="5_pcvdn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2gvg"]
+size = Vector2(24, 18.75)
 
-[node name="Ratao" type="Area2D" groups=["Enemie"]]
+[sub_resource type="AtlasTexture" id="AtlasTexture_03qak"]
+atlas = ExtResource("3_pcvdn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pcvdn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03qak")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Theme" id="Theme_texjw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0uck4"]
+bg_color = Color(0.141176, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uv0yj"]
+bg_color = Color(0.972549, 0, 0, 1)
+corner_detail = 10
+
+[node name="Ratao" type="Area2D" groups=["Boss", "Enemie"]]
+script = ExtResource("1_58qke")
+projetil = ExtResource("2_65hd2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -6.375)
 shape = SubResource("RectangleShape2D_h2gvg")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_h2gvg")
+[node name="Ratao_skin" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pcvdn")
+
+[node name="mira" type="Marker2D" parent="."]
+position = Vector2(-12, 7)
+
+[node name="Sprite2D" type="Sprite2D" parent="mira"]
+visible = false
+position = Vector2(0, 1)
+scale = Vector2(0.365, 0.365)
+texture = ExtResource("4_65hd2")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="LifeSlider" type="ProgressBar" parent="."]
+offset_left = -6.0
+offset_top = -4.0
+offset_right = 146.0
+offset_bottom = 23.0
+scale = Vector2(0.073, 0.073)
+theme = SubResource("Theme_texjw")
+theme_override_fonts/font = ExtResource("5_pcvdn")
+theme_override_styles/background = SubResource("StyleBoxFlat_0uck4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_uv0yj")
+value = 100.0
+show_percentage = false
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
