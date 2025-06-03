@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfe3xvmmwq6nc"]
+
+[ext_resource type="Script" uid="uid://doy5xpscyyc7x" path="res://scenes/Chefoes/ratao/dialogo/papo_reto.gd" id="1_3pwmr"]
+
+[node name="papo_reto" type="Node2D"]
+script = ExtResource("1_3pwmr")
+
+[node name="Nome_Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Nome"
+
+[node name="Fala_Label" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 18.0
+offset_right = 131.0
+offset_bottom = 41.0
+text = "Altos blá blá blá"
+
+[node name="Proximo_Btn" type="Button" parent="."]
+offset_left = 175.0
+offset_top = 76.0
+offset_right = 249.0
+offset_bottom = 107.0
+text = "próximo"
+
+[connection signal="pressed" from="Proximo_Btn" to="." method="_on_proximo_btn_pressed"]

@@ -103,6 +103,7 @@ frame_progress = 0.0461717
 
 [node name="Exit" type="Button" parent="Control"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 646.0
 offset_top = -15.0
 offset_right = 732.0

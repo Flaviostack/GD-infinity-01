@@ -13,10 +13,11 @@ func morrer():
 		get_tree().paused = true
 
 func levar_dano(dano):
-	vida = vida - dano
-	$LifeSlider.value = vida
+	vida -= dano
+	print("Vida antes:", vida + dano, " | Vida depois:", vida)
+	print("Barra existe?", $vida_do_ratao)
+	$vida_do_ratao.value = vida
 	morrer()
-	#$aiaiai.play()
 	
 func atirar():
 	var player = get_tree().get_root().get_node("BossFight/Player")
@@ -39,7 +40,8 @@ func mover_pro_lado(delta):
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	vida = vida_base
+	 # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
