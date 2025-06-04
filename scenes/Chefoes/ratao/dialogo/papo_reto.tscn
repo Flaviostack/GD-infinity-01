@@ -1,27 +1,44 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfe3xvmmwq6nc"]
+[gd_scene load_steps=4 format=3 uid="uid://dfe3xvmmwq6nc"]
 
 [ext_resource type="Script" uid="uid://doy5xpscyyc7x" path="res://scenes/Chefoes/ratao/dialogo/papo_reto.gd" id="1_3pwmr"]
+
+[sub_resource type="Gradient" id="Gradient_3pwmr"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0.2, 0.486275, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_slwut"]
+gradient = SubResource("Gradient_3pwmr")
 
 [node name="papo_reto" type="Node2D"]
 script = ExtResource("1_3pwmr")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(311, 67)
+scale = Vector2(9.78372, 2.10261)
+texture = SubResource("GradientTexture2D_slwut")
+
 [node name="Nome_Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+modulate = Color(0.52549, 1, 1, 1)
+offset_top = 10.0
+offset_right = 49.0
+offset_bottom = 33.0
 text = "Nome"
+uppercase = true
 
 [node name="Fala_Label" type="Label" parent="."]
-offset_left = 8.0
-offset_top = 18.0
-offset_right = 131.0
-offset_bottom = 41.0
+offset_left = 14.0
+offset_top = 33.0
+offset_right = 357.0
+offset_bottom = 127.0
 text = "Altos blá blá blá"
+autowrap_mode = 2
 
 [node name="Proximo_Btn" type="Button" parent="."]
-offset_left = 175.0
-offset_top = 76.0
-offset_right = 249.0
-offset_bottom = 107.0
+offset_left = 537.0
+offset_top = 71.0
+offset_right = 611.0
+offset_bottom = 102.0
 text = "próximo"
 
 [connection signal="pressed" from="Proximo_Btn" to="." method="_on_proximo_btn_pressed"]

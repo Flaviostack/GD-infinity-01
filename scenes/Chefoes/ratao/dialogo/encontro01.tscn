@@ -1,0 +1,111 @@
+[gd_scene load_steps=16 format=3 uid="uid://bfnrjfveosr0m"]
+
+[ext_resource type="Texture2D" uid="uid://kekta4m8j3pg" path="res://Textures/Entidades/boss/ratao_0.png" id="2_1ydro"]
+[ext_resource type="Texture2D" uid="uid://dqvneo76g0nf1" path="res://Textures/Entidades/GatinhoEspacial.png" id="3_ac8ml"]
+[ext_resource type="Texture2D" uid="uid://cmup5q4k16qvc" path="res://Textures/fundo.png" id="4_sykqp"]
+[ext_resource type="PackedScene" uid="uid://dfe3xvmmwq6nc" path="res://scenes/Chefoes/ratao/dialogo/papo_reto.tscn" id="4_xtgvh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03qak"]
+atlas = ExtResource("2_1ydro")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lpfy2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03qak")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdl7e"]
+atlas = ExtResource("3_ac8ml")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bruh7"]
+atlas = ExtResource("3_ac8ml")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6eyey"]
+atlas = ExtResource("3_ac8ml")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3wef"]
+atlas = ExtResource("3_ac8ml")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qu4a1"]
+atlas = ExtResource("3_ac8ml")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70d11"]
+atlas = ExtResource("3_ac8ml")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cw2d6"]
+atlas = ExtResource("3_ac8ml")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khinc"]
+atlas = ExtResource("3_ac8ml")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dg0mx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdl7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bruh7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6eyey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3wef")
+}],
+"loop": true,
+"name": &"machucado",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qu4a1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70d11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cw2d6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khinc")
+}],
+"loop": true,
+"name": &"parado",
+"speed": 4.0
+}]
+
+[node name="Encontro01" type="Node2D"]
+
+[node name="Fundo" type="Sprite2D" parent="."]
+position = Vector2(360, 363)
+scale = Vector2(1, 1)
+texture = ExtResource("4_sykqp")
+
+[node name="Ratao_skin" type="AnimatedSprite2D" parent="."]
+position = Vector2(194, 110)
+scale = Vector2(9.75, 9.75)
+sprite_frames = SubResource("SpriteFrames_lpfy2")
+
+[node name="animacao" type="AnimatedSprite2D" parent="."]
+position = Vector2(357, 559)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_dg0mx")
+animation = &"parado"
+
+[node name="papo_reto" parent="." instance=ExtResource("4_xtgvh")]
+position = Vector2(3, 593)

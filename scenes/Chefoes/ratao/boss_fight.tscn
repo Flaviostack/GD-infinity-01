@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvvxfpegdocq"]
+[gd_scene load_steps=6 format=3 uid="uid://dvvxfpegdocq"]
 
 [ext_resource type="Script" uid="uid://btrbs188ssxjh" path="res://scenes/Chefoes/ratao/boss_fight.gd" id="1_s7caf"]
 [ext_resource type="Texture2D" uid="uid://cmup5q4k16qvc" path="res://Textures/fundo.png" id="2_dl48p"]
 [ext_resource type="PackedScene" uid="uid://cahst5sg2lslv" path="res://scenes/Chefoes/ratao/ratao.tscn" id="3_8krej"]
 [ext_resource type="PackedScene" uid="uid://bfcymhqi8q682" path="res://scenes/Entidades/Player.tscn" id="4_bna6k"]
 [ext_resource type="PackedScene" uid="uid://cpr0lei6fkkit" path="res://scenes/outros/hud.tscn" id="5_ernhf"]
-[ext_resource type="PackedScene" uid="uid://dfe3xvmmwq6nc" path="res://scenes/Chefoes/ratao/dialogo/papo_reto.tscn" id="6_rj7jb"]
 
 [node name="BossFight" type="Node2D"]
 script = ExtResource("1_s7caf")
@@ -25,6 +24,3 @@ scale = Vector2(1.5, 1.5)
 velocidade_base = 40
 
 [node name="HUD" parent="." instance=ExtResource("5_ernhf")]
-
-[node name="papo_reto" parent="." instance=ExtResource("6_rj7jb")]
-position = Vector2(156, 594)

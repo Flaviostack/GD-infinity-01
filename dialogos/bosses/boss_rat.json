@@ -1,12 +1,27 @@
-{
-  "boss_rat": [
+  [ 
     {
-      "Nome": "Ratão",
-      "Fala": "Você conseguiu chegar longe, gatinho. Mas aqui é o fim da linha!"
+      "index":"0",
+      "Nome": "Mecha desconhecido",
+      "Fala": "-Você conseguiu chegar longe, gatinho. Mas aqui é o fim da linha!"
     },
     {
+      "index":"1",
+      "Nome" : "Gatinho",
+      "Fala": "-Eu não sei quem é você, mas eu não vou desistir!"
+    },
+    {
+      "index":"2",
+      "Nome":"Gatinho",
+      "Fala": "-Eu vou te derrotar, Ratão!" 
+    },
+    {
+      "index":"3",
       "Nome": "Ratão",
-      "Fala": "Porquê agora, você vai virar queijo hahahahaha!"
+      "Fala": "-Hahahaha! Você acha que pode me vencer? Então sua jornada acaba aqui!"
+    },
+    {
+      "index":"4",
+      "Nome": "Ratão",
+      "Fala": "-Porquê agora, você vai virar queijo hahahahaha!"
     }
   ]
-}
